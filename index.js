@@ -15,14 +15,18 @@ app.engine('hbs', handlebars({
 
 app.use(express.static('public'))
 
-
 app.get('/', async (req, res) => {
+  res.render('intro', {layout: 'index', nome : req.query.nome, cognome : req.query.cognome, eta : req.query.eta, country : req.headers["accept-language"].substr(0,2), saluto : "Hello man"})
+  
+});
+
+app.get('/characters', async (req, res) => {
   const chars = (await plumbus.getCharacter({
     name: req.query.nome,
     status: req.query.status,
     species : req.query.species
   }))
-  if(req.headers["accept-language"].substr(0,2)=="it"){
+  if(req.headers["accept-language"].substr(0,2)==="it"){
     res.render('main', {layout: 'index', chars: chars.results, saluto : "Ciao uomo! ecco i personaggi squanchosi!"});
   }else{
     res.render('main', {layout: 'index', chars: chars.results, saluto : "Hello man! here your squancheos characters!"})
