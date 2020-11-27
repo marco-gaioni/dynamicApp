@@ -1,7 +1,6 @@
 
-{{#if listExists}}
-    <div class="container">
-      <h1 class="text-white text-center" style="font-family: fantasy; margin-bottom: 3%;">The Smiths</h1>
+    <div class="container">}
+      <h1 class="text-white text-center" style="font-family: fantasy; margin-bottom: 3%;">{{saluto}}</h1>
           <div class="row justify-content-md-center">
                {{#each chars}}
                     <div class="card mb-3 bg-dark" style="width: 540px; margin: 1%;">
@@ -13,7 +12,7 @@
                           <div class="card-body">
                             <h5 class="card-title text-warning" style="text-align: center;"><b>{{this.name}}</b></h5>
                             <p class="card-text text-muted" ><b>Status : </b><b class="text-white">{{this.status}}</b></p>
-                            <p class="card-text text-muted" ><b>Location : </b><b class="text-white">{{this.location.name}}</b></p>
+                            <p class="card-text text-muted" ><b>Species : </b><b class="text-white">{{this.species}}</b></p>
                             <p class="card-text text-muted" ><b>Origin : </b> <b class="text-white">{{this.origin.name}}</b></p>
                           </div>
                         </div>
@@ -22,4 +21,3 @@
          {{/each}}
       </div>
   </div>
-{{/if}}
