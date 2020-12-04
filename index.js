@@ -1,7 +1,7 @@
 const express = require('express')
 const plumbus = require('rickmortyapi')
 const app = new express()
-const port = 8080;
+const port = 8080
 const handlebars = require('express-handlebars')
 
 app.set('view engine', 'hbs')
