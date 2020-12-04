@@ -15,7 +15,7 @@ app.engine('hbs', handlebars({
 
 app.use(express.static('public'))
 
-app.get('/', async (req, res) => {
+app.get('/', (req, res) => {
   res.render('intro', {layout: 'index', nome : req.query.nome, cognome : req.query.cognome, eta : req.query.eta, country : req.headers["accept-language"].substr(0,2), saluto : "Hello man"})
 })
 
